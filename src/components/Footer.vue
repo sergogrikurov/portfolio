@@ -1,16 +1,20 @@
 <script setup>
 import Logo from "./Logo.vue";
+
+import { useI18n } from "vue-i18n";
+
+const { locale, t } = useI18n();
 </script>
 <template>
   <div class="footer">
     <div class="footer__top">
       <Logo />
-      <a href="mailto:sergogrikurov@gmail.com"> sergogrikurov@gmail.com </a>
+      <a href="mailto:sergogrikurov@gmail.com">sergogrikurov@gmail.com</a>
     </div>
     <div class="footer__desc">
-      Front-end developer (Vue) with Laravel experience
+      {{ t("footer.desc") }}
     </div>
-    <div class="footer__copy">© Copyright 2025. Made by SG</div>
+    <div class="footer__copy">© {{ t("footer.copy") }}</div>
   </div>
 </template>
 
@@ -32,6 +36,10 @@ import Logo from "./Logo.vue";
     @media (max-width: $mobile) {
       line-height: 1.4;
     }
+  }
+  &__copy {
+    display: flex;
+    align-items: center;
   }
 }
 </style>
