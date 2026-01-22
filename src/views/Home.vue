@@ -3,9 +3,11 @@ import { useI18n } from "vue-i18n";
 import { useRouter, useRoute, RouterLink } from "vue-router";
 
 import Image from "@/assets/images/home/image.png";
+import Image2 from "@/assets/images/home/image2.png";
 import MathGame from "@/assets/images/home/math-game-project.png";
 import GameBox from "@/assets/images/home/game-box-project.png";
 import Cafe from "@/assets/images/home/cafe-project.png";
+import Email from "@/assets/images/home/email.svg";
 
 // router
 const router = useRouter();
@@ -47,7 +49,7 @@ const { locale, t } = useI18n();
         <div class="home-projects__top_wrapper">
           <h3>
             <span class="purple">#</span>
-            {{ t("home.projects") }}
+            {{ t("nav.projects") }}
           </h3>
           <p></p>
         </div>
@@ -147,6 +149,7 @@ const { locale, t } = useI18n();
           <div class="home-skills-cards__card_content">
             <span>VSCode</span>
             <span>Figma</span>
+            <span>Firebase Hosting</span>
           </div>
         </div>
 
@@ -165,6 +168,49 @@ const { locale, t } = useI18n();
             <span>Laravel</span>
             <span>Vue</span>
           </div>
+        </div>
+      </div>
+    </section>
+    <section class="home__about home-about">
+      <div class="home-about__content">
+        <div class="home-about__content_wrapper">
+          <h5>
+            <span class="purple">#</span>
+            {{ t("nav.about") }}
+          </h5>
+          <p></p>
+        </div>
+        <p>{{ t("home.aboutP1") }}</p>
+        <p>{{ t("home.aboutP2") }}</p>
+        <p>{{ t("home.aboutP3") }}</p>
+        <RouterLink :to="{ name: 'about', params: { lang: locale } }">
+          <button>{{ t("home.readMore") }}-></button>
+        </RouterLink>
+      </div>
+      <div class="home-about__image">
+        <img :src="Image2" alt="Image Two" />
+      </div>
+    </section>
+    <section class="home__contacts home-contacts">
+      <div class="home-contacts__top">
+        <h5>
+          <span class="purple">#</span>
+          {{ t("nav.contacts") }}
+        </h5>
+        <p></p>
+      </div>
+      <div class="home-contacts__wrapper">
+        <div class="home-contacts__left">
+          <p>
+            {{ t("home.contactText") }}
+          </p>
+        </div>
+        <div class="home-contacts__right">
+          <h6>{{ t("home.messageMe") }}</h6>
+          <a href="mailto:sergogrikurov@gmail.com">
+            <img :src="Email" alt="Email Icon" />
+            sergogrikurov@gmail.com
+          </a>
         </div>
       </div>
     </section>
@@ -394,7 +440,6 @@ const { locale, t } = useI18n();
     }
   }
 }
-
 .home-skills-cards {
   display: flex;
   align-items: center;
@@ -417,6 +462,143 @@ const { locale, t } = useI18n();
       align-items: center;
       flex-wrap: wrap;
       gap: rem(8);
+    }
+  }
+}
+.home-about {
+  @include adaptive-value(padding-top, 50, 25);
+  @include adaptive-value(padding-bottom, 50, 25);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @media (max-width: $mobile) {
+    flex-direction: column;
+  }
+  &__content {
+    @include adaptive-value(width, 515, 290);
+    & > *:not(:last-child) {
+      margin-bottom: rem(25);
+    }
+    &_wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      @include adaptive-value(width, 700, 170);
+      & h5 {
+        @include adaptive-value(font-size, 32, 28);
+        margin-right: rem(20);
+        @media (max-width: $mobile) {
+          margin-right: 0;
+        }
+      }
+      & p {
+        flex: 1 1 auto;
+        border: 1px solid $purple;
+        max-width: rem(500);
+        @media (max-width: $mobile) {
+          display: none;
+        }
+      }
+    }
+    & p {
+      color: $gray;
+    }
+    & button {
+      width: fit-content;
+      border: 1px solid $purple;
+      background-color: transparent;
+      font-weight: 500;
+      color: $gray;
+      padding: rem(8) rem(16);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: $purple;
+        color: $main-color;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      &:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+
+  &__image {
+    border-bottom: rem(1) solid $purple;
+    @include adaptive-value(width, 340, 290);
+    overflow: hidden;
+    & img {
+      @media (max-width: $mobile) {
+        object-fit: cover;
+        object-position: center left;
+      }
+    }
+  }
+}
+.home-contacts {
+  @include adaptive-value(padding-top, 50, 25);
+  @include adaptive-value(padding-bottom, 50, 25);
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include adaptive-value(width, 700, 170);
+    & h5 {
+      @include adaptive-value(font-size, 32, 28);
+      margin-right: rem(20);
+      @media (max-width: $mobile) {
+        margin-right: 0;
+      }
+    }
+    & p {
+      flex: 1 1 auto;
+      border: 1px solid $purple;
+      max-width: rem(500);
+      @media (max-width: $mobile) {
+        display: none;
+      }
+    }
+  }
+
+  &__wrapper {
+    @include adaptive-value(margin-top, 45, 30);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      gap: rem(30);
+    }
+  }
+
+  &__left {
+    @include adaptive-value(width, 505, 290);
+    font-weight: 500;
+    color: $gray;
+    line-height: 1.2;
+    @media (max-width: $mobile) {
+      max-width: rem(287);
+    }
+  }
+
+  &__right {
+    border: 1px solid $gray;
+    padding: rem(16);
+    & > *:not(:last-child) {
+      margin-bottom: rem(16);
+    }
+    & h6 {
+      font-weight: 600;
+    }
+    & a {
+      color: $gray;
     }
   }
 }
