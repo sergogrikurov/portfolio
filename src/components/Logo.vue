@@ -11,7 +11,10 @@
   position: relative;
   width: rem(17);
   height: rem(28);
-
+  transition: all 0.3s ease;
+  &:hover {
+    scale: 1.2;
+  }
   &__first-letter {
     position: absolute;
   }
