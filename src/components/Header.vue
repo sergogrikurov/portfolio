@@ -21,14 +21,6 @@ const langRef = ref(null);
 // мобильное меню
 const menuOpen = ref(false);
 
-// nav ссылки
-const navLinks = [
-  { name: "home", label: "nav.home" },
-  { name: "works", label: "nav.works" },
-  { name: "about", label: "nav.about" },
-  { name: "contacts", label: "nav.contacts" },
-];
-
 // toggle dropdown языка
 const toggleLang = () => {
   langOpen.value = !langOpen.value;
@@ -46,7 +38,7 @@ const setLang = (lang) => {
   });
 
   langOpen.value = false;
-  menuOpen.value = false; // закрываем мобильное меню, если открыт
+  menuOpen.value = false;
 };
 
 // клик вне dropdown
@@ -75,73 +67,102 @@ onBeforeUnmount(() => {
     <!-- Desktop Nav -->
     <nav class="header__nav">
       <RouterLink
-        v-for="link in navLinks"
-        :key="link.name"
-        :to="{ name: link.name, params: { lang: locale } }"
         class="header__nav_link"
+        :to="{ name: 'home', params: { lang: locale } }"
       >
-        <span>#</span>{{ t(link.label) }}
+        <span>#</span>{{ t("nav.home") }}
       </RouterLink>
 
+      <RouterLink
+        class="header__nav_link"
+        :to="{ name: 'works', params: { lang: locale } }"
+      >
+        <span>#</span>{{ t("nav.works") }}
+      </RouterLink>
+      <RouterLink
+        class="header__nav_link"
+        :to="{ name: 'about', params: { lang: locale } }"
+      >
+        <span>#</span>{{ t("nav.about") }}
+      </RouterLink>
+      <RouterLink
+        class="header__nav_link"
+        :to="{ name: 'contacts', params: { lang: locale } }"
+      >
+        <span>#</span>{{ t("nav.contacts") }}
+      </RouterLink>
       <!-- LANG SWITCHER -->
       <div class="header__lang" ref="langRef" @click="toggleLang">
-        {{ locale.toUpperCase() }}
+        <p>{{ locale.toUpperCase() }}</p>
         <img :src="Chek" alt="arrow" :class="{ open: langOpen }" />
-
         <div v-if="langOpen" class="header__lang-dropdown">
-          <div @click.stop="setLang('en')">EN</div>
-          <div @click.stop="setLang('ru')">RU</div>
+          <div class="header__lang-dropdown_link" @click.stop="setLang('en')">
+            EN
+          </div>
+          <div class="header__lang-dropdown_link" @click.stop="setLang('ru')">
+            RU
+          </div>
         </div>
       </div>
     </nav>
 
     <!-- Burger button для мобильного -->
     <button class="header__burger" @click="menuOpen = true"></button>
+    <div v-if="menuOpen" class="header__burger-body">
+      <div class="header__burger-body_top">
+        <Logo />
+        <span class="header__burger-close" @click="menuOpen = false">X</span>
+      </div>
+      <nav class="header__burger-nav">
+        <RouterLink
+          class="header__burger-nav_link"
+          :to="{ name: 'home', params: { lang: locale } }"
+        >
+          <span>#</span>{{ t("nav.home") }}
+        </RouterLink>
 
-    <!-- Mobile Menu -->
-    <transition name="fade">
-      <div v-if="menuOpen" class="mobile-menu">
-        <div class="mobile-menu__header">
-          <Logo />
-          <button class="mobile-menu__close" @click="menuOpen = false">
-            ✕
-          </button>
-        </div>
-
-        <nav class="mobile-menu__nav">
-          <RouterLink
-            v-for="link in navLinks"
-            :key="link.name"
-            :to="{ name: link.name, params: { lang: locale } }"
-            class="mobile-menu__link"
-            @click="menuOpen = false"
-          >
-            <span>#</span>{{ t(link.label) }}
-          </RouterLink>
-
-          <!-- LANG SWITCHER внутри nav -->
-          <div class="mobile-menu__lang" ref="langRef" @click.stop="toggleLang">
-            {{ locale.toUpperCase() }}
-            <img :src="Chek" alt="arrow" :class="{ open: langOpen }" />
-
-            <div v-if="langOpen" class="mobile-menu__lang-dropdown">
-              <div @click.stop="setLang('en')">EN</div>
-              <div @click.stop="setLang('ru')">RU</div>
+        <RouterLink
+          class="header__burger-nav_link"
+          :to="{ name: 'works', params: { lang: locale } }"
+        >
+          <span>#</span>{{ t("nav.works") }}
+        </RouterLink>
+        <RouterLink
+          class="header__burger-nav_link"
+          :to="{ name: 'about', params: { lang: locale } }"
+        >
+          <span>#</span>{{ t("nav.about") }}
+        </RouterLink>
+        <RouterLink
+          class="header__burger-nav_link"
+          :to="{ name: 'contacts', params: { lang: locale } }"
+        >
+          <span>#</span>{{ t("nav.contacts") }}
+        </RouterLink>
+        <!-- LANG SWITCHER -->
+        <div class="header__lang" ref="langRef" @click="toggleLang">
+          <p>{{ locale.toUpperCase() }}</p>
+          <img :src="Chek" alt="arrow" :class="{ open: langOpen }" />
+          <div v-if="langOpen" class="header__lang-dropdown">
+            <div class="header__lang-dropdown_link" @click.stop="setLang('en')">
+              EN
+            </div>
+            <div class="header__lang-dropdown_link" @click.stop="setLang('ru')">
+              RU
             </div>
           </div>
-        </nav>
-
-        <div class="mobile-menu__footer">
-          <a
-            href="https://github.com/sergogrikurov"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img :src="GitHub" alt="GitHub Icon" />
-          </a>
         </div>
+      </nav>
+      <div class="header__burger-body_footer">
+        <a
+          href="https://github.com/sergogrikurov"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img :src="GitHub" alt="GitHub logo" />
+        </a>
       </div>
-    </transition>
+    </div>
   </header>
 </template>
 
@@ -153,7 +174,6 @@ onBeforeUnmount(() => {
   align-items: center;
   justify-content: space-between;
   position: relative;
-
   &__logo {
     z-index: 60;
   }
@@ -162,8 +182,11 @@ onBeforeUnmount(() => {
     display: flex;
     align-items: center;
     gap: rem(30);
-
+    @media (max-width: $mobile) {
+      display: none;
+    }
     &_link {
+      color: $gray;
       & span {
         color: $purple;
         margin-right: rem(1);
@@ -172,41 +195,54 @@ onBeforeUnmount(() => {
         color: $main-color;
       }
     }
+  }
 
-    &__lang {
-      position: relative;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
+  &__lang {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
 
-      & img {
-        transition: transform 0.2s ease;
+    & p {
+      color: $gray;
+      &:hover {
+        color: $main-color;
       }
     }
-    & img.open {
-      transform: rotate(180deg);
-    }
-    &__lang-dropdown {
-      position: absolute;
-      top: 120%;
-      left: 0;
-      background: #111;
-      border: 1px solid #333;
-      padding: 0.5rem 0;
-      min-width: 3rem;
 
-      & div {
-        padding: 0.25rem 0.75rem;
-        cursor: pointer;
-        &:hover {
-          color: $main-color;
-        }
-      }
+    & img {
+      display: inline-block;
+      margin-top: rem(-3);
+      margin-left: rem(4);
+      transition: transform 0.2s ease;
     }
   }
 
-  .header__burger {
+  &__lang-dropdown {
+    position: absolute;
+    top: rem(20);
+    left: 0;
+    background: #111;
+    padding: rem(8);
+    & > *:not(:last-child) {
+      margin-bottom: rem(8);
+    }
+    &_link {
+      color: $gray;
+      &:hover {
+        color: $main-color;
+      }
+    }
+  }
+}
+
+.open {
+  transform: rotate(180deg);
+}
+// Burger
+.header {
+  &__burger {
     display: none;
     font-size: 2rem;
     background: none;
@@ -215,6 +251,9 @@ onBeforeUnmount(() => {
     position: relative;
     width: rem(25);
     height: rem(15);
+    @media (max-width: $mobile) {
+      display: block;
+    }
     &::before {
       position: absolute;
       content: "";
@@ -234,105 +273,41 @@ onBeforeUnmount(() => {
       background-color: #d9d9d9;
     }
   }
-
-  @media (max-width: 768px) {
-    &__nav {
-      display: none;
-    }
-    .header__burger {
-      display: block;
+  &__burger-body {
+    display: none;
+    @media (max-width: $mobile) {
+      position: fixed;
+      inset: 0;
+      background-color: #111;
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      padding: rem(30);
+      gap: rem(30);
+      &_top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      &_footer {
+        text-align: center;
+      }
     }
   }
-}
-
-/* Mobile Menu */
-.mobile-menu {
-  position: fixed;
-  inset: 0;
-  background-color: #111; // полностью непрозрачный
-  z-index: 100;
-  display: flex;
-  flex-direction: column;
-  color: white;
-
-  &__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-  }
-
-  &__nav {
+  &__burger-nav {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    padding: 1rem;
-    flex: 1 1 auto;
-  }
-  &__footer {
-    text-align: center;
-    padding-bottom: rem(50);
-  }
-
-  &__link {
-    font-size: 1.5rem;
-    color: white;
-    & span {
-      color: $purple;
-      margin-right: 0.5rem;
-    }
-  }
-
-  &__close {
-    font-size: 2rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: white;
-  }
-
-  &__lang {
-    position: relative;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-
-    & img {
-      transition: transform 0.2s ease;
-    }
-
-    & img.open {
-      transform: rotate(180deg);
-    }
-  }
-
-  &__lang-dropdown {
-    position: absolute;
-    top: 120%;
-    left: 0;
-    background: #111;
-    border: 1px solid #333;
-    padding: 0.5rem 0;
-    min-width: 3rem;
-
-    & div {
-      padding: 0.25rem 0.75rem;
-      cursor: pointer;
+    gap: rem(30);
+    &_link {
+      color: $gray;
+      & span {
+        color: $purple;
+        margin-right: rem(1);
+      }
       &:hover {
         color: $main-color;
       }
     }
   }
-}
-
-/* Transition */
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.3s;
-}
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
 }
 </style>
