@@ -237,9 +237,6 @@ onBeforeUnmount(() => {
   }
 }
 
-.open {
-  transform: rotate(180deg);
-}
 // Burger
 .header {
   &__burger {

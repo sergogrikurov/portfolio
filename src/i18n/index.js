@@ -14,8 +14,8 @@ const messages = {
     works: { title: "Страница Работ" },
     nav: {
       home: "главная",
-      works: "работы",
-      about: "обо мне",
+      works: "проекты",
+      about: "о-себе",
       contacts: "контакты",
     },
   },
