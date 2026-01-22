@@ -75,9 +75,9 @@ onBeforeUnmount(() => {
 
       <RouterLink
         class="header__nav_link"
-        :to="{ name: 'works', params: { lang: locale } }"
+        :to="{ name: 'projects', params: { lang: locale } }"
       >
-        <span>#</span>{{ t("nav.works") }}
+        <span>#</span>{{ t("nav.projects") }}
       </RouterLink>
       <RouterLink
         class="header__nav_link"
@@ -123,9 +123,9 @@ onBeforeUnmount(() => {
 
         <RouterLink
           class="header__burger-nav_link"
-          :to="{ name: 'works', params: { lang: locale } }"
+          :to="{ name: 'projects', params: { lang: locale } }"
         >
-          <span>#</span>{{ t("nav.works") }}
+          <span>#</span>{{ t("nav.projects") }}
         </RouterLink>
         <RouterLink
           class="header__burger-nav_link"

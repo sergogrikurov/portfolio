@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory, RouterView } from "vue-router";
 import Home from "@/views/Home.vue";
-import Works from "@/views/Works.vue";
+import Projects from "@/views/Projects.vue";
 import About from "@/views/About.vue";
 import Contacts from "@/views/Contacts.vue";
 
@@ -21,9 +21,9 @@ const routes = [
     component: RouterView,
     children: [
       {
-        path: "works",
-        name: "works",
-        component: Works,
+        path: "projects",
+        name: "projects",
+        component: Projects,
       },
     ],
   },

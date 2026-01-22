@@ -2,10 +2,10 @@ import { createI18n } from "vue-i18n";
 
 const messages = {
   en: {
-    works: { title: "Works Page" },
+    works: { title: "Projects Page" },
     nav: {
       home: "home",
-      works: "works",
+      projects: "projects",
       about: "about-me",
       contacts: "contacts",
     },
@@ -19,6 +19,14 @@ const messages = {
       hero: "Building modern web applications using Vue and Laravel",
       contactMe: "Contact me",
       workingOn: "Currently working on Portfolio",
+      projects: "projects",
+      viewAll: "View all",
+      skills: "skills",
+      languages: "Languages",
+      databases: "Databases",
+      tools: "Tools",
+      others: "Others",
+      frameworks: "Frameworks",
     },
     footer: {
       desc: "Front-end developer (Vue) with Laravel experience",
@@ -26,10 +34,10 @@ const messages = {
     },
   },
   ru: {
-    works: { title: "Страница Работ" },
+    works: { title: "Страница Проектов" },
     nav: {
       home: "главная",
-      works: "проекты",
+      projects: "проекты",
       about: "о-себе",
       contacts: "контакты",
     },
@@ -43,6 +51,14 @@ const messages = {
       hero: "Создаю современные веб-приложения с использованием Vue и Laravel",
       contactMe: "Связаться со мной",
       workingOn: "Сейчас работаю над портфолио",
+      projects: "проекты",
+      viewAll: "Смотреть все",
+      skills: "навыки",
+      languages: "Языки",
+      databases: "Базы данных",
+      tools: "Инструменты",
+      others: "Прочее",
+      frameworks: "Фреймворки",
     },
     footer: {
       desc: "Front-end разработчик (Vue) с опытом работы с Laravel",
