@@ -54,10 +54,7 @@ const routes = [
 
   {
     path: "/",
-    redirect: () => {
-      const lang = localStorage.getItem("lang") || "en";
-      return `/${lang}`;
-    },
+    redirect: "/en",
   },
 ];
 
