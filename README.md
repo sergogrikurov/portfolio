@@ -23,21 +23,18 @@ https://sergogrikurov.github.io/portfolio
 
 ## 📦 Project setup
 
-<pre>
+```sh
 npm install
-<button onclick="navigator.clipboard.writeText('npm install')">Copy</button>
-</pre>
+```
 
-## 🛠 Development
+### Compile and Hot-Reload for Development
 
-<pre>
+```sh
 npm run dev
-<button onclick="navigator.clipboard.writeText('npm run dev')">Copy</button>
-</pre>
+```
 
-## 🏗 Build
+### Compile and Minify for Production
 
-<pre>
+```sh
 npm run build
-<button onclick="navigator.clipboard.writeText('npm run build')">Copy</button>
-</pre>
+```
