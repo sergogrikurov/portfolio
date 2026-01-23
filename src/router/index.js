@@ -6,8 +6,8 @@ import Contacts from "@/views/Contacts.vue";
 
 const routes = [
   {
-    path: "/portfolio/",
-    redirect: "/portfolio/en",
+    path: "/",
+    redirect: "/en",
   },
   {
     path: "/:lang(en|ru)",
@@ -54,11 +54,6 @@ const routes = [
         component: Contacts,
       },
     ],
-  },
-
-  {
-    path: "/",
-    redirect: "/en",
   },
 ];
 
