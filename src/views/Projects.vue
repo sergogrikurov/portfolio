@@ -9,18 +9,12 @@ import Cafe from "@/assets/images/home/cafe-project.png";
 <template>
   <div class="projects">
     <section class="projects__top projects-top">
-      <h2>
-        <span class="purple">/</span>
-        {{ t("nav.projects") }}
-      </h2>
+      <h2><span class="purple">/</span>{{ t("nav.projects") }}</h2>
       <p>{{ t("projects.list") }}</p>
     </section>
     <section class="projects__decent projects-decent">
       <div class="projects-decent__top">
-        <h3>
-          <span class="purple">#</span>
-          {{ t("projects.decent") }}
-        </h3>
+        <h3><span class="purple">#</span>{{ t("projects.decent") }}</h3>
         <p></p>
       </div>
       <div class="projects-decent__cards projects-decent-cards">

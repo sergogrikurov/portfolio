@@ -8,10 +8,7 @@ import Email from "@/assets/images/home/email.svg";
   <div class="contacts">
     <section class="contacts__content contacts-content">
       <div class="contacts-content__top">
-        <h5>
-          <span class="purple">/</span>
-          {{ t("nav.contacts") }}
-        </h5>
+        <h5><span class="purple">/</span>{{ t("nav.contacts") }}</h5>
         <p></p>
       </div>
       <div class="contacts-content__wrapper">

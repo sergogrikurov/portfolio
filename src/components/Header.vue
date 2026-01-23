@@ -117,6 +117,7 @@ onBeforeUnmount(() => {
         <RouterLink
           class="header__burger-nav_link"
           :to="{ name: 'home', params: { lang: locale } }"
+          @click="menuOpen = false"
         >
           <span>#</span>{{ t("nav.home") }}
         </RouterLink>
@@ -124,18 +125,21 @@ onBeforeUnmount(() => {
         <RouterLink
           class="header__burger-nav_link"
           :to="{ name: 'projects', params: { lang: locale } }"
+          @click="menuOpen = false"
         >
           <span>#</span>{{ t("nav.projects") }}
         </RouterLink>
         <RouterLink
           class="header__burger-nav_link"
           :to="{ name: 'about', params: { lang: locale } }"
+          @click="menuOpen = false"
         >
           <span>#</span>{{ t("nav.about") }}
         </RouterLink>
         <RouterLink
           class="header__burger-nav_link"
           :to="{ name: 'contacts', params: { lang: locale } }"
+          @click="menuOpen = false"
         >
           <span>#</span>{{ t("nav.contacts") }}
         </RouterLink>

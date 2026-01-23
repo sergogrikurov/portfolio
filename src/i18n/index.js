@@ -2,7 +2,6 @@ import { createI18n } from "vue-i18n";
 
 const messages = {
   en: {
-    works: { title: "Projects Page" },
     nav: {
       home: "home",
       projects: "projects",
@@ -49,9 +48,11 @@ const messages = {
       desc: "Front-end developer (Vue) with Laravel experience",
       copy: "Copyright 2025. Made by SG",
     },
+    about: {
+      whoAmI: "Who am i",
+    },
   },
   ru: {
-    works: { title: "Страница Проектов" },
     nav: {
       home: "главная",
       projects: "проекты",
@@ -96,6 +97,9 @@ const messages = {
     footer: {
       desc: "Front-end разработчик (Vue) с опытом работы с Laravel",
       copy: "Все права защищены 2025. Сделал SG",
+    },
+    about: {
+      whoAmI: "Кто я такой",
     },
   },
 };

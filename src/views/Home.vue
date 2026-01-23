@@ -47,10 +47,7 @@ const { locale, t } = useI18n();
     <section class="home__projects home-projects">
       <div class="home-projects__top">
         <div class="home-projects__top_wrapper">
-          <h3>
-            <span class="purple">#</span>
-            {{ t("nav.projects") }}
-          </h3>
+          <h3><span class="purple">#</span>{{ t("nav.projects") }}</h3>
           <p></p>
         </div>
         <RouterLink :to="{ name: 'projects', params: { lang: locale } }">
@@ -119,10 +116,7 @@ const { locale, t } = useI18n();
     <section class="home__skills home-skills">
       <div class="home-skills__top">
         <div class="home-skills__top_wrapper">
-          <h5>
-            <span class="purple">#</span>
-            {{ t("home.skills") }}
-          </h5>
+          <h5><span class="purple">#</span>{{ t("home.skills") }}</h5>
           <p></p>
         </div>
       </div>
@@ -174,10 +168,7 @@ const { locale, t } = useI18n();
     <section class="home__about home-about">
       <div class="home-about__content">
         <div class="home-about__content_wrapper">
-          <h5>
-            <span class="purple">#</span>
-            {{ t("nav.about") }}
-          </h5>
+          <h5><span class="purple">#</span>{{ t("nav.about") }}</h5>
           <p></p>
         </div>
         <p>{{ t("home.aboutP1") }}</p>
@@ -193,10 +184,7 @@ const { locale, t } = useI18n();
     </section>
     <section class="home__contacts home-contacts">
       <div class="home-contacts__top">
-        <h5>
-          <span class="purple">#</span>
-          {{ t("nav.contacts") }}
-        </h5>
+        <h5><span class="purple">#</span>{{ t("nav.contacts") }}</h5>
         <p></p>
       </div>
       <div class="home-contacts__wrapper">
@@ -449,6 +437,9 @@ const { locale, t } = useI18n();
     max-width: rem(200);
     border: 1px solid $gray;
     padding: rem(8);
+    display: flex;
+    flex-direction: column;
+    min-height: rem(100);
     & h6 {
       color: $main-color;
       font-weight: 500;
@@ -456,6 +447,7 @@ const { locale, t } = useI18n();
       padding-bottom: rem(8);
     }
     &_content {
+      flex: 1;
       padding-top: rem(8);
       color: $gray;
       display: flex;
