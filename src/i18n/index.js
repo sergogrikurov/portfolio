@@ -37,6 +37,14 @@ const messages = {
         "I’m interested in freelance opportunities. If you have any questions or would like to discuss a project, feel free to contact me.",
       messageMe: "Message me here",
     },
+    projects: {
+      list: "List of my projects",
+      decent: "decent",
+      descMathGame: "Math web game for children aged 6–9",
+      descGameBox: "Vue 3 browser game with responsive layout",
+      descCafe:
+        "Vue 3 multi-page site featuring a cafe, online store, and blog",
+    },
     footer: {
       desc: "Front-end developer (Vue) with Laravel experience",
       copy: "Copyright 2025. Made by SG",
@@ -77,6 +85,13 @@ const messages = {
       contactText:
         "Я открыт к фриланс-предложениям. Если у вас есть вопросы или вы хотите обсудить проект — не стесняйтесь связаться со мной.",
       messageMe: "Напишите мне сюда",
+    },
+    projects: {
+      list: "Список моих проектов",
+      decent: "неплохие",
+      descMathGame: "Веб-игра по математике для детей 1–3 классов",
+      descGameBox: "Браузерная игра на Vue 3 с адаптивной вёрсткой",
+      descCafe: "Сайт кафе на Vue 3 с онлайн-магазином и блогом",
     },
     footer: {
       desc: "Front-end разработчик (Vue) с опытом работы с Laravel",

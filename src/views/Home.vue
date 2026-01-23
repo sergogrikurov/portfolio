@@ -68,7 +68,7 @@ const { locale, t } = useI18n();
           <div class="home-projects-cards__card_title-link">
             <h4>MathGame</h4>
             <a
-              href="https://sergogrikurov.github.io/Liza-s-Game/"
+              href="https://sergogrikurov.github.io/math-game/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -601,9 +601,5 @@ const { locale, t } = useI18n();
       color: $gray;
     }
   }
-}
-
-.purple {
-  color: $purple;
 }
 </style>
