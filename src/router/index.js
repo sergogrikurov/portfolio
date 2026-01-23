@@ -6,11 +6,14 @@ import Contacts from "@/views/Contacts.vue";
 
 const routes = [
   {
-    path: "/portfolio/",
-    redirect: "/portfolio/en",
+    path: "/",
+    redirect: () => {
+      const lang = localStorage.getItem("lang") || "en";
+      return `/${lang}`;
+    },
   },
   {
-    path: "/portfolio/:lang(en|ru)",
+    path: "/:lang(en|ru)",
     component: RouterView,
     children: [
       { path: "", name: "home", component: Home },
@@ -22,7 +25,7 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHistory("/portfolio/"),
+  history: createWebHistory(),
   routes,
 });
 
