@@ -6,6 +6,10 @@ import Contacts from "@/views/Contacts.vue";
 
 const routes = [
   {
+    path: "/portfolio/",
+    redirect: "/portfolio/en",
+  },
+  {
     path: "/:lang(en|ru)",
     component: RouterView,
     children: [
