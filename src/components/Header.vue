@@ -7,6 +7,9 @@ import Logo from "./Logo.vue";
 import Chek from "@/assets/images/home/chek.svg";
 import GitHub from "@/assets/images/home/github.svg";
 
+import { useLangRoute } from "@/composables/useLangRoute";
+const { langRoute } = useLangRoute();
+
 // i18n
 const { locale, t } = useI18n();
 
