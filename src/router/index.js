@@ -9,12 +9,13 @@ const routes = [
     path: "/:lang(en|ru)",
     component: RouterView,
     children: [
-      { path: "", name: "home", component: Home, alias: ["/"] },
+      { path: "", name: "home", component: Home },
       { path: "projects", name: "projects", component: Projects },
       { path: "about", name: "about", component: About },
       { path: "contacts", name: "contacts", component: Contacts },
     ],
   },
+  { path: "/", redirect: "/en" },
 ];
 
 const router = createRouter({
