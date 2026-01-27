@@ -3,16 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <title>Redirecting...</title>
-    <script type="text/javascript">
-      // Перенаправляем все запросы на index.html
-      const base = "/portfolio/"; // <-- путь к твоему репозиторию
-      const path = window.location.pathname;
+    <script>
+      // Перенаправляем любой путь на index.html с Vue Router
+      const base = "/portfolio/";
+      const path =
+        window.location.pathname +
+        window.location.search +
+        window.location.hash;
 
-      // Если путь не пустой и не равен "/", подставляем base
-      if (path !== "/" && !path.startsWith(base)) {
-        window.location.replace(base + path.replace(/^\/+/, ""));
-      } else {
+      if (!path.startsWith(base)) {
         window.location.replace(base);
+      } else {
+        window.location.replace(base + "#" + path.slice(base.length));
       }
     </script>
   </head>
