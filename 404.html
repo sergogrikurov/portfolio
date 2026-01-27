@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Redirecting...</title>
+    <script type="text/javascript">
+      // Перенаправляем все запросы на index.html
+      const base = "/portfolio/"; // <-- путь к твоему репозиторию
+      const path = window.location.pathname;
+
+      // Если путь не пустой и не равен "/", подставляем base
+      if (path !== "/" && !path.startsWith(base)) {
+        window.location.replace(base + path.replace(/^\/+/, ""));
+      } else {
+        window.location.replace(base);
+      }
+    </script>
+  </head>
+  <body>
+    Redirecting...
+  </body>
+</html>
