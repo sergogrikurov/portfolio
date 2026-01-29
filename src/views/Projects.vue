@@ -5,6 +5,7 @@ const { t, locale } = useI18n();
 import MathGame from "@/assets/images/home/math-game-project.png";
 import GameBox from "@/assets/images/home/game-box-project.png";
 import Cafe from "@/assets/images/home/cafe-project.png";
+import VueHelper from "@/assets/images/home/vue-helper.jpg";
 </script>
 <template>
   <div class="projects">
@@ -18,6 +19,66 @@ import Cafe from "@/assets/images/home/cafe-project.png";
         <p></p>
       </div>
       <div class="projects-decent__cards projects-decent-cards">
+        <div class="projects-decent-cards__card">
+          <img :src="Cafe" alt="Cafe Image" />
+          <ul>
+            <li>Html</li>
+            <li>CSS</li>
+            <li>Vue</li>
+          </ul>
+          <div class="projects-decent-cards__card_title-link">
+            <h4>Cafe-Website</h4>
+            <p>{{ t("projects.descCafe") }}</p>
+            <div>
+              <a
+                href="https://sergogrikurov.github.io/cafe-website/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Live
+              </a>
+
+              <a
+                href="https://github.com/sergogrikurov/cafe-website"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="projects-decent-cards__card">
+          <img :src="VueHelper" alt="Vue Helper Image" />
+          <ul>
+            <li>Html</li>
+            <li>CSS</li>
+            <li>Vue</li>
+          </ul>
+          <div class="projects-decent-cards__card_title-link">
+            <h4>Vue-Helper</h4>
+            <p>{{ t("projects.vueHelper") }}</p>
+            <div>
+              <a
+                href="https://sergogrikurov.github.io/vue-helper/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Live
+              </a>
+
+              <a
+                href="https://github.com/sergogrikurov/vue-helper"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
         <div class="projects-decent-cards__card">
           <img :src="MathGame" alt="Math Game Image" />
           <ul>
@@ -76,36 +137,6 @@ import Cafe from "@/assets/images/home/cafe-project.png";
             </div>
           </div>
         </div>
-
-        <div class="projects-decent-cards__card">
-          <img :src="Cafe" alt="Cafe Image" />
-          <ul>
-            <li>Html</li>
-            <li>CSS</li>
-            <li>Vue</li>
-          </ul>
-          <div class="projects-decent-cards__card_title-link">
-            <h4>Cafe-Website</h4>
-            <p>{{ t("projects.descCafe") }}</p>
-            <div>
-              <a
-                href="https://sergogrikurov.github.io/cafe-website/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Live
-              </a>
-
-              <a
-                href="https://github.com/sergogrikurov/cafe-website"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                GitHub
-              </a>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   </div>
@@ -153,8 +184,10 @@ import Cafe from "@/assets/images/home/cafe-project.png";
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-
   gap: rem(16);
+  @media (max-width: $mobile) {
+    flex-direction: column;
+  }
   &__card {
     @include adaptive-value(min-height, 380, 350);
     border: 1px solid $gray;

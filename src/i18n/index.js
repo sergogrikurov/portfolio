@@ -43,6 +43,7 @@ const messages = {
       descGameBox: "Vue 3 browser game with responsive layout",
       descCafe:
         "Vue 3 multi-page site featuring a cafe, online store, and blog",
+      vueHelper: "Vue 3 multi-feature project with UI helpers",
     },
     footer: {
       desc: "Front-end developer (Vue) with Laravel experience",
@@ -93,6 +94,7 @@ const messages = {
       descMathGame: "Веб-игра по математике для детей 1–3 классов",
       descGameBox: "Браузерная игра на Vue 3 с адаптивной вёрсткой",
       descCafe: "Сайт кафе на Vue 3 с онлайн-магазином и блогом",
+      vueHelper: "Проект на Vue 3 с множеством функций: UI-хелперы",
     },
     footer: {
       desc: "Front-end разработчик (Vue) с опытом работы с Laravel",

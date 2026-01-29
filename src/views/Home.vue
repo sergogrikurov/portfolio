@@ -7,6 +7,7 @@ import Image2 from "@/assets/images/home/image2.png";
 import MathGame from "@/assets/images/home/math-game-project.png";
 import GameBox from "@/assets/images/home/game-box-project.png";
 import Cafe from "@/assets/images/home/cafe-project.png";
+import VueHelper from "@/assets/images/home/vue-helper.jpg";
 import Email from "@/assets/images/home/email.svg";
 
 // router
@@ -56,6 +57,44 @@ const { locale, t } = useI18n();
       </div>
       <div class="home-projects__cards home-projects-cards">
         <div class="home-projects-cards__card">
+          <img :src="Cafe" alt="Cafe Image" />
+          <ul>
+            <li>Html</li>
+            <li>CSS</li>
+            <li>Vue</li>
+          </ul>
+          <div class="home-projects-cards__card_title-link">
+            <h4>Cafe-Website</h4>
+            <a
+              href="https://sergogrikurov.github.io/cafe-website/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Live
+            </a>
+          </div>
+        </div>
+
+        <div class="home-projects-cards__card">
+          <img :src="VueHelper" alt="Vue Helper Image" />
+          <ul>
+            <li>Html</li>
+            <li>CSS</li>
+            <li>Vue</li>
+          </ul>
+          <div class="home-projects-cards__card_title-link">
+            <h4>Cafe-Website</h4>
+            <a
+              href="https://sergogrikurov.github.io/vue-helper/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Live
+            </a>
+          </div>
+        </div>
+
+        <div class="home-projects-cards__card">
           <img :src="MathGame" alt="Math Game Image" />
           <ul>
             <li>Html</li>
@@ -85,25 +124,6 @@ const { locale, t } = useI18n();
             <h4>GameBox</h4>
             <a
               href="https://gamebox-92bf6.web.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Live
-            </a>
-          </div>
-        </div>
-
-        <div class="home-projects-cards__card">
-          <img :src="Cafe" alt="Cafe Image" />
-          <ul>
-            <li>Html</li>
-            <li>CSS</li>
-            <li>Vue</li>
-          </ul>
-          <div class="home-projects-cards__card_title-link">
-            <h4>Cafe-Website</h4>
-            <a
-              href="https://sergogrikurov.github.io/cafe-website/"
               target="_blank"
               rel="noopener noreferrer"
             >
